@@ -107,6 +107,24 @@ if echo "$answer" | grep -iq "^y" ;then
 fi
 
 
+fastjet="fastjet-3.4.0.tar.gz"
+URL=http://fastjet.fr/repo/$fastjet
+echo -n "Install Fastjet (y/n)? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+	mkdir fastjet_build;
+	mkdir fastjet;
+	echo "[installer] getting FastJet"; wget $URL 2>/dev/null || curl -O $URL; tar -zxf $fastjet -C fastjet_build --strip-components 1;
+	echo "Installing FastJet in fastjet";
+	cd fastjet_build;
+	./configure --prefix=$homeDIR/fastjet;
+	make; make install;
+	cd $homeDIR;
+	rm -r fastjet_build;
+	rm $fastjet;	
+fi
+
+
 echo -n "Install Delphes (y/n)? "
 repo=https://github.com/delphes/delphes
 URL=http://cp3.irmp.ucl.ac.be/downloads/$delphes
@@ -121,6 +139,18 @@ if echo "$answer" | grep -iq "^y" ;then
   make HAS_PYTHIA8=true;
   rm -rf .git
   cd $homeDIR;
+fi
+
+
+echo -n "Install Yoda (y/n)? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+   echo "[installer] installing Yoda via pip3";
+   cd $homeDIR
+   pip3 install --user yoda;
+   echo "[installer] installing Yoda via conda";
+   conda install -c conda-forge yoda
+   echo "[installer] done";
 fi
 
 
@@ -160,6 +190,10 @@ if echo "$answer" | grep -iq "^y" ;then
    cd $homeDIR
    echo "[installer] done";
 fi
+
+
+
+
 #
 #
 # echo -n "Install CutLang (y/n)? "

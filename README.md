@@ -8,6 +8,8 @@ Currently the following tools can be installed:
   * [HepMC](http://hepmc.web.cern.ch/hepmc/)
   * [MadGraph5](https://launchpad.net/mg5amcnlo/)
   * [CheckMATE](https://github.com/CheckMATE2/checkmate2)
+  * [FastJet](http://fastjet.fr/)
+  * [YODA](https://gitlab.com/hepcedar/yoda/)
 
 Running:
 
