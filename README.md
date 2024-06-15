@@ -7,9 +7,13 @@ Currently the following tools can be installed:
   * [Pythia8](https://pythia.org/)
   * [HepMC](http://hepmc.web.cern.ch/hepmc/)
   * [MadGraph5](https://launchpad.net/mg5amcnlo/)
+  * [MadAnalysis5](https://launchpad.net/madanalysis5/)
   * [CheckMATE](https://github.com/CheckMATE2/checkmate2)
   * [FastJet](http://fastjet.fr/)
   * [YODA](https://gitlab.com/hepcedar/yoda/)
+  * [Rivet](https://gitlab.com/hepcedar/rivet/)
+  * [Contur](https://gitlab.com/hepcedar/contur/)
+  * [MatchMaker](https://gitlab.com/m4103/matchmaker-eft)
 
 Running:
 
@@ -27,7 +31,10 @@ The following packages/tools must already be installed in the system:
  * libtool
  * gzip
  * bzr
- * [ROOT](https://root.cern/)
+ * sqlite3
+ * cython3
+ * form
+ * [ROOT](https://root.cern/) 
  
 In addition the variable $ROOTSYS must be properly defined.
  
